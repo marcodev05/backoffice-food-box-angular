@@ -1,0 +1,109 @@
+<div class="wrapper">
+    <app-header [title]="title"></app-header>
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-7 connectedSortable">
+            <div class="card">
+                <div class="card-header ">
+                    <div class="d-flex justify-content-between">
+                    <h5>
+                        <i class="ion ion-clipboard mr-1"></i>
+                        Nouveau plat
+                    </h5>
+                        <button type="submit" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Nouveau categorie</button>
+                </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="name">Nom du produit</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="quantity">Quantité</label>
+                                <input type="number" class="form-control" id="quantity" placeholder="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" name="" id="" cols="30" rows="7"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="quantity">Prix</label>
+                                <input type="number" class="form-control" id="quantity" placeholder="0">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="name">Categorie</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Url image</label>
+                            <input type="text" class="form-control" id="inputAddress2"
+                                placeholder="http://exemple.com/monImage.jpg">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                                <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
+                                <div class="invalid-feedback">Example invalid feedback text</div>
+                              </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer clearfix">
+                    <button type="submit" class="btn btn-primary float-right"><i class="fas fa-save"></i> Enregistrer</button>
+                </div>
+            </div>
+        </section>
+        <!-- /. dish form  -->
+
+        <section class="col-lg-5">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="">
+                        Creer un Nouveau Categorie
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="name">Nom du categorie</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" name="" id="" cols="30" rows="7"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="quantity">Prix</label>
+                                <input type="number" class="form-control" id="quantity" placeholder="0">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="name">Categorie</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Url image categorie</label>
+                            <input type="text" class="form-control" id="inputAddress2"
+                                placeholder="http://exemple.com/monImage.jpg">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer clearfix">
+                    <button type="submit" class="btn btn-primary float-right"><i class="fas fa-save"></i> Enregistrer</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
