@@ -1,1 +1,88 @@
-<p>menu-details works!</p>
+<app-header [title]="title"></app-header>
+<div *ngIf="currentMenu" class="row mt-4">
+    <section class="col-lg-6 connectedSortable">
+        <div class="card">
+            <h5 class="pt-3 pl-3">
+                Apropos
+            </h5>
+            <hr>
+            <div class="card-body">
+                <div class="row justify-content-between px-4">
+                    <Label>Numero</Label> <span> {{currentMenu.menuId}}</span>
+                </div>
+                <hr>
+                <div class="row justify-content-between px-4">
+                    <Label>Nom du plat</Label> <span> {{currentMenu.name}}</span>
+                </div>
+                <hr>
+                <div class="row justify-content-between px-4">
+                    <Label>Category</Label> <span> Chinois </span>
+                </div>
+                <hr>
+                <div class="row justify-content-between px-4">
+                    <Label>Disponibilité</Label>
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="available"
+                            [checked]="currentMenu.available">
+                        <label class="custom-control-label" for="available"></label>
+                    </div>
+                </div>
+                <hr>
+                <div class="row justify-content-between px-4">
+                    <Label>Prix</Label> <span class="text-success text-bold">$ {{currentMenu.price}}</span>
+                </div>
+                <hr>
+            </div>
+            <div class="card-footer clearfix">
+                <div class="d-flex justify-content-between">
+                    <a href="#"  class="btn btn-sm btn-info"><i class="fas fa-edit"></i>Modifier</a>
+                    <a (click)="deleteMenuById()" class="btn btn-sm btn-danger"><i
+                            class="fas fa-trash"></i>Supprimer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /. dish form  -->
+    <section class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-lg-12 col-md-6 d-flex justify-content-center">
+                    <img [src]="currentMenu.picture ? currentMenu.picture : 'assets/img/default-image.png'"
+                        style="max-height:200px ; max-width: 200px; margin-top: -10%;"
+                        class="img-thumbnail rounded-circle">
+                </div>
+                <div class="col-lg-12">
+                    <label for="">Description</label>
+                    <p style="letter-spacing: 1.5px; text-align: justify;">{{currentMenu.description}}</p>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="row justify-content-center mb-3">
+                            <i class="fas fa-archive fa-3x"></i>
+                        </div>
+                        <div class="row justify-content-center">
+                            <h3 class="">{{currentMenu.quantity}}</h3>
+                        </div>
+                        <div class="row justify-content-center">
+                            <p class="text-muted ">Quantité en stock</p>
+                        </div>
+                    </div>
+                    <div class="col-6 border-left">
+                        <div class="row justify-content-center mb-3">
+                            <i class="fas fa-bullhorn fa-3x"></i>
+                        </div>
+                        <div class="row justify-content-center">
+                            <h3 class="">06</h3>
+                        </div>
+                        <div class="row justify-content-center">
+                            <p class="text-muted ">Vendu Aujourd'hui</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div *ngIf="successMsg !== ''" class="alert alert-success text-light" role="alert">
+    {{successMsg}}
+</div>

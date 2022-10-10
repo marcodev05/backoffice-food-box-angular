@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ContentComponent } from './content/content.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 
 const routes: Routes = [
@@ -15,11 +16,16 @@ const routes: Routes = [
   {
     path: '', component: ContentComponent, children: [
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: HomeComponent },
+      { path: 'dashboard', component: HomeComponent, canActivate: [AuthGuard] },
       {
-        path: 'menus',
+        path: 'menus', canActivate: [AuthGuard],
         loadChildren: () =>
           import('./foods/food.module').then(m => m.FoodModule)
+      },
+      {
+        path: 'orders',
+        loadChildren: () =>
+          import('./orders/order.module').then(m => m.OrderModule)
       },
     ]
   }

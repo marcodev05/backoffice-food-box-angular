@@ -4,8 +4,8 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
-import { BoxComponent } from './layouts/box/box.component';
-
+import { CardItemMenuComponent } from './components/card-item-menu/card-item-menu.component';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -14,16 +14,20 @@ import { BoxComponent } from './layouts/box/box.component';
     NavbarComponent,
     FooterComponent,
     SidebarComponent,
-    BoxComponent
+    CardItemMenuComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DataTablesModule,
+    
   ],
   exports:[
     HeaderComponent,
     NavbarComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    CardItemMenuComponent,
+    DataTablesModule,
   ]
 })
 export class SharedModule { }

@@ -6,17 +6,15 @@ import { environment } from 'src/environments/environment';
 import { LoginRequest } from '../models/LoginRequest';
 import { catchError, map, mapTo, tap } from 'rxjs/operators';
 import { LoginResponse } from '../models/LoginResponse';
+import { User } from '../models/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private apiBaseUrl = environment.apiBaseUrl;
+  private loggedUser: User | null = new User();
   constructor(private http: HttpClient) { }
-
-  getToken(): String | null {
-    return localStorage.getItem('currentUser');
-  }
 
 
   login(loginRequest: LoginRequest): Observable<any> {
@@ -33,6 +31,27 @@ export class AuthService {
           })
         )
       )
+  }
+
+
+  public getCurrentUser(): User | null {
+    return this.loggedUser;
+  }
+
+
+  public getToken(): String | null {
+    return localStorage.getItem('user-token');
+  }
+
+  public isLoggedIn(): boolean{
+     return this.getToken() ? true : false;
+  }
+
+
+  public logout(): void {
+    this.loggedUser = null;
+    localStorage.removeItem('user-token');
+    localStorage.removeItem('currentUser');
   }
 
 }
