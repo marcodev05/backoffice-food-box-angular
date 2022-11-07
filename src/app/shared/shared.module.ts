@@ -6,6 +6,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { CardItemMenuComponent } from './components/card-item-menu/card-item-menu.component';
 import { DataTablesModule } from 'angular-datatables';
+import { MultiStepsComponent } from './components/multi-steps/multi-steps.component';
 
 
 @NgModule({
@@ -15,11 +16,11 @@ import { DataTablesModule } from 'angular-datatables';
     FooterComponent,
     SidebarComponent,
     CardItemMenuComponent,
+    MultiStepsComponent,
   ],
   imports: [
     CommonModule,
     DataTablesModule,
-    
   ],
   exports:[
     HeaderComponent,
@@ -27,7 +28,7 @@ import { DataTablesModule } from 'angular-datatables';
     FooterComponent,
     SidebarComponent,
     CardItemMenuComponent,
-    DataTablesModule,
+    DataTablesModule
   ]
 })
 export class SharedModule { }

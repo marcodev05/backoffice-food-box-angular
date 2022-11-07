@@ -1,99 +1,139 @@
 <app-header [title]="title"></app-header>
-        <div class="card p-3">
-            <div class="card-header ">
-                <div class="d-flex justify-content-between">
-                    <h6>
-                        <i class="ion ion-clipboard mr-1"></i>
-                        Commandes récente
-                    </h6>
-                </div>
+<!-- Horizontal Steppers -->
+<div class="row mb-4 ">
+    <div class="col-md-12">
+        <!-- Stepers Wrapper -->
+        <div class="row pl-4 justify-content-left">
+            <!-- Second Step -->
+            <div class=" step-item active mb-2">
+                <a [routerLink]="['/orders']">
+                    <span class="rounded-circle bg-danger py-2 px-3">1</span>
+                    <span class="label mx-2 aling-item-center text-danger">Attente</span>
+                </a>
             </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table datatable class="table m-0">
-                        <thead>
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Nom du client</th>
-                                <th>Montant</th>
-                                <th>Status</th>
-                                <th>Date du commande</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                <td>Call of Duty IV</td>
-                                <td>$50</td>
-                                <td><span class="badge badge-success">Shipped</span></td>
-                                <td>
-                                    <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                                <td>Samsung Smart TV</td>
-                                <td>$50</td>
-                                <td><span class="badge badge-warning">Pending</span></td>
-                                <td>
-                                    <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                                <td>iPhone 6 Plus</td>
-                                <td>$50</td>
-                                <td><span class="badge badge-danger">Delivered</span></td>
-                                <td>
-                                    <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                                <td>Samsung Smart TV</td>
-                                <td>$89</td>
-                                <td><span class="badge badge-info">Processing</span></td>
-                                <td>
-                                    <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                                <td>Samsung Smart TV</td>
-                                <td>$54</td>
-                                <td><span class="badge badge-warning">Pending</span></td>
-                                <td>
-                                    <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                                <td>iPhone 6 Plus</td>
-                                <td>$74</td>
-                                <td><span class="badge badge-danger">Delivered</span></td>
-                                <td>
-                                    <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                <td>Call of Duty IV</td>
-                                <td>$50</td>
-                                <td><span class="badge badge-success">Shipped</span></td>
-                                <td>
-                                    <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div>
+                <hr class="mx-2" style='display:inline-block; width: 80px;'>
             </div>
-
+            <!-- Second Step -->
+            <div class="step-item mb-2">
+                <a [routerLink]="['/orders/pending']" routerLinkActive="router-link-active" >
+                    <span class="rounded-circle bg-danger py-2 px-3">2</span>
+                    <span class="label mx-2">En préparation</span>
+                </a>
+            </div>
+            <div>
+                <hr class="mx-2 py-2 " style='display:inline-block; width:80px;'>
+            </div>
+            <!-- Third Step -->
+            <div class="step-item warning mb-2">
+                <a href="#!">
+                    <span class="rounded-circle bg-danger py-2 px-3">3</span>
+                    <span class="label mx-2">En route</span>
+                </a>
+            </div>
+            <div>
+                <hr class="mx-2" style='display:inline-block; width:80px;'>
+            </div>
+            <!-- Forth Step -->
+            <div class="step-item warning">
+                <a href="#!">
+                    <span class="rounded-circle bg-danger py-2 px-3">4</span>
+                    <span class="label mx-2">Livré</span>
+                </a>
+            </div>
         </div>
+        <!-- /.Stepers Wrapper -->
+    </div>
+</div>
+<!-- /.Horizontal Steppers -->
+<hr class="shadow-lg  rounded p-1">
+<div class="card p-3" data-aos="fade-left">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table datatable class="table m-0">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Nom du client</th>
+                        <th>Montant</th>
+                        <th>Status</th>
+                        <th>Date du commande</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                        <td>Call of Duty IV</td>
+                        <td>$50</td>
+                        <td><span class="badge badge-success">Shipped</span></td>
+                        <td>
+                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                        <td>Samsung Smart TV</td>
+                        <td>$50</td>
+                        <td><span class="badge badge-warning">Pending</span></td>
+                        <td>
+                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                        <td>iPhone 6 Plus</td>
+                        <td>$50</td>
+                        <td><span class="badge badge-danger">Delivered</span></td>
+                        <td>
+                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                        <td>Samsung Smart TV</td>
+                        <td>$89</td>
+                        <td><span class="badge badge-info">Processing</span></td>
+                        <td>
+                            <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                        <td>Samsung Smart TV</td>
+                        <td>$54</td>
+                        <td><span class="badge badge-warning">Pending</span></td>
+                        <td>
+                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                        <td>iPhone 6 Plus</td>
+                        <td>$74</td>
+                        <td><span class="badge badge-danger">Delivered</span></td>
+                        <td>
+                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                        <td>Call of Duty IV</td>
+                        <td>$50</td>
+                        <td><span class="badge badge-success">Shipped</span></td>
+                        <td>
+                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

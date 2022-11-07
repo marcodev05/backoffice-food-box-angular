@@ -4,20 +4,31 @@ import { OrderListComponent } from './pages/order-list/order-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
-
+import { OrderDetailsComponent } from './pages/order-details/order-details.component';
+import { OrderPendingListComponent } from './pages/order-pending-list/order-pending-list.component';
+import { OrderActiveListComponent } from './pages/order-active-list/order-active-list.component';
+import { OrdersShippingComponent } from './pages/orders-shipping/orders-shipping.component';
 const orderRoutes: Routes = [
-  { path: '', component: OrderListComponent},
+  { path: '', component: OrderPendingListComponent},
+  { path: 'pending', component: OrderPendingListComponent},
+  { path: 'in_process', component: OrderActiveListComponent},
+  { path: 'shipping', component: OrdersShippingComponent},
+  { path: 'details', component: OrderDetailsComponent},
 ];
 
 @NgModule({
   declarations: [
-    OrderListComponent
+    OrderListComponent,
+    OrderDetailsComponent,
+    OrderPendingListComponent,
+    OrderActiveListComponent,
+    OrdersShippingComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(orderRoutes),
     HttpClientModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class OrderModule { }

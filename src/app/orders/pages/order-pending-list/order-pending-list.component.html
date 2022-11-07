@@ -1,0 +1,102 @@
+<app-header [title]="title"></app-header>
+<!-- Horizontal Steppers -->
+<div class="row mb-4 ">
+    <div class="col-md-12">
+        <!-- Stepers Wrapper -->
+        <div class="row pl-4 justify-content-left">
+            <!-- Second Step -->
+            <div class=" step-item active mb-2">
+                <a href="#!">
+                    <span class="rounded-circle bg-danger py-2 px-3">1</span>
+                    <span class="label mx-2 aling-item-center text-bold text-danger">Pending</span>
+                </a>
+            </div>
+            <div>
+                <hr class="mx-2" style='display:inline-block; width: 80px;'>
+            </div>
+            <!-- Second Step -->
+            <div class="step-item mb-2">
+                <a [routerLink]="['/orders/in_process']">
+                    <span class="rounded-circle bg-danger py-2 px-3">2</span>
+                    <span class="label mx-2">In process</span>
+                </a>
+            </div>
+            <div>
+                <hr class="mx-2 py-2 " style='display:inline-block; width:80px;'>
+            </div>
+            <!-- Third Step https://www.umamiburgerparis.com/media/images/gallery/CaaheCali_5.jpg?c=7777-1 -->
+            <div class="step-item warning mb-2">
+                <a [routerLink]="['/orders/in_process']">
+                    <span class="rounded-circle bg-danger py-2 px-3">3</span>
+                    <span class="label mx-2">In the Way</span>
+                </a>
+            </div>
+            <div>
+                <hr class="mx-2" style='display:inline-block; width:80px;'>
+            </div>
+            <!-- Forth Step -->
+            <div class="step-item warning">
+                <a [routerLink]="['/orders/shipping']">
+                    <span class="rounded-circle bg-danger py-2 px-3">4</span>
+                    <span class="label mx-2">Delivered</span>
+                </a>
+            </div>
+        </div>
+        <!-- /.Stepers Wrapper -->
+    </div>
+</div>
+<!-- /.Horizontal Steppers -->
+<hr class="shadow-lg  rounded p-1">
+<div class="row">
+    <div *ngFor="let order of orders " class="col-lg-6" data-aos="fade-left" data-aos-duration="2500">
+        <div class="card shadow">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <label for="">Order #{{order.orderId}}</label>
+                        <p class="text-muted">18/10/2022 07:21</p>
+                        <div class="row">
+                            <p class="col">Payment:</p>
+                            <p class="col text-muted">{{order.paymentMethod.name}}</p>
+                        </div>
+                        <div class="row">
+                            <p class="col">Total:</p>
+                            <p class="col text-muted">$ {{order.total}}</p>
+                        </div>
+                        <div class="row">
+                            <p class="col">Status:</p>
+                            <p class="col text-warning">{{order.status}}</p>
+                        </div>
+                    </div>
+                    <div class="col border-left">
+                        <div class="row px-2 justify-content-end">
+                            <a (click)="declineOrder(order.orderId)" class="btn btn-warning">Decline</a>
+                            <a  (click)="confirmOrder(order.orderId)" class="btn ml-1 btn-primary">Confirm</a>
+                        </div>
+                        <hr>
+                        <h6 class="text-center">{{order.contact.firstname}} {{order.contact.lastname}} </h6>
+                        <p class="text-center">{{order.contact.phone}}</p>
+                        <p class="text-center">{{order.contact.address1}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-12 overflow-auto" style="height: 130px;">
+                        <div *ngFor="let item of order.orderLines "
+                            class="row mb-3 justify-content-start align-items-center">
+                            <div class="col-3"><img
+                                    [src]=" item.menu.picture ? item.menu.picture : 'assets/img/default-image.png'"
+                                    class="img-thumbnail rounded mx-auto d-block" alt="..." style="max-height: 50px ; max-width: 50px ;">
+                            </div>
+                            <div class="col-6">
+                                {{item.menu.name}}
+                            </div>
+                            <div class="col-2">$ {{item.menu.price}} <span class="text-info"> x </span>
+                                <b>{{item.quantity}}</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

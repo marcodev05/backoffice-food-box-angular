@@ -12,6 +12,8 @@ import { OrderModule } from './orders/order.module';
 import { AuthGuard } from './core/guards/auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
     AuthModule,
     FoodModule,
     SharedModule,
-    OrderModule
+    OrderModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot( {timeOut: 5000, preventDuplicates: true}),
   ],
   providers: [
     AuthGuard,
