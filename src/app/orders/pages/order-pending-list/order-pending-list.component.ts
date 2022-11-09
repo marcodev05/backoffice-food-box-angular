@@ -12,11 +12,12 @@ import { OrderService } from '../../shared/services/order.service';
 export class OrderPendingListComponent implements OnInit {
   title: string = "PENDING ORDERS";
   orders: any[] = [];
-  constructor(private orderService: OrderService, private toast: ToastrService) { }
+  constructor(private orderService: OrderService,
+               private toast: ToastrService) { }
 
   ngOnInit(): void {
-    AOS.init();
     this.fethAllPendingOrders();
+    AOS.init();
   }
 
 

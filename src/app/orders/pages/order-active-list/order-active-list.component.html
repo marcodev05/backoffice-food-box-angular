@@ -26,7 +26,7 @@
             </div>
             <!-- Third Step https://www.umamiburgerparis.com/media/images/gallery/CaaheCali_5.jpg?c=7777-1 -->
             <div class="step-item warning mb-2">
-                <a  [routerLink]="['/orders/shipping']">
+                <a [routerLink]="['/orders/shipping']">
                     <span class="rounded-circle bg-danger py-2 px-3">3</span>
                     <span class="label mx-2">In the Way</span>
                 </a>
@@ -49,7 +49,7 @@
 
 <hr class="shadow-lg  rounded p-1">
 <div class="row">
-    <div *ngFor="let order of orders " class="col-lg-6" data-aos="fade-left" data-aos-duration="2500">
+    <div *ngFor="let order of orders " class="col-lg-6" data-aos="zoom-in" data-aos-duration="1500">
         <div class="card shadow">
             <div class="card-body">
                 <div class="row">
@@ -71,7 +71,8 @@
                     </div>
                     <div class="col border-left">
                         <div class="d-flex px-2 justify-content-end">
-                            <a class="btn ml-1 btn-info" (click)="openModal()"><i class="fa fa-paper-plane mr-1" aria-hidden="true"></i>Dispatch</a>
+                            <a class="btn ml-1 btn-info" (click)="openModal(order.orderId)"><i class="fa fa-paper-plane mr-1"
+                                    aria-hidden="true"></i>Dispatch</a>
                         </div>
                         <hr>
                         <h6 class="text-center">{{order.contact.firstname}} {{order.contact.lastname}} </h6>
@@ -86,13 +87,15 @@
                             class="row mb-3 justify-content-start align-items-center">
                             <div class="col-3"><img
                                     [src]=" item.menu.picture ? item.menu.picture : 'assets/img/default-image.png'"
-                                    class="img-thumbnail rounded mx-auto d-block" alt="..." style="max-height: 50px ; max-width: 50px ;">
+                                    class="img-thumbnail rounded mx-auto d-block" alt="..."
+                                    style="max-height: 50px ; max-width: 50px ;">
                             </div>
                             <div class="col-6">
                                 {{item.menu.name}}
                             </div>
                             <div class="col-2">$ {{item.menu.price}} <span class="text-info"> x </span>
-                                <b>{{item.quantity}}</b></div>
+                                <b>{{item.quantity}}</b>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,20 +103,3 @@
         </div>
     </div>
 </div>
-
-<!-- Modal -->
-<div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-    <button
-      type="button"
-      class="btn-close"
-      aria-label="Close"
-    ></button>
-  </div>
-  <div class="modal-body">...</div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary">
-      Close
-    </button>
-    <button type="button" class="btn btn-primary">Save changes</button>
-  </div>

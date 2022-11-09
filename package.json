@@ -27,6 +27,7 @@
     "datatables.net": "^1.11.3",
     "datatables.net-dt": "^1.11.3",
     "jquery": "^3.6.0",
+    "mdb-angular-ui-kit": "^2.3.0",
     "ngx-toastr": "^13.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",

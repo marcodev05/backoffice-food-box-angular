@@ -7,6 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardItemMenuComponent implements OnInit {
   @Input() description: string= '';
+  @Input() name: string= '';
+  @Input() quantity: number | undefined;
+  @Input() price: number | undefined;
+  @Input() picture: string | undefined = '';
   constructor() { }
 
   ngOnInit(): void {

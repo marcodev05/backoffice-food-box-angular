@@ -1,0 +1,58 @@
+<div class="modal-header bg-info justify-content-between">
+    <h5 class="modal-title col-6" id="exampleModalLabel">{{title}}</h5>
+    <div class="input-group col-6">
+        <input type="text" class="form-control">
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-12 overflow-auto" style="height: 150px;">
+            <div class="row mb-3 justify-content-start align-items-center">
+                <div class="col-1">
+                    <div class="custom-control custom-radio">
+                        <input class="custom-control-input custom-control-input-danger" type="radio" id="customRadio4"
+                            name="customRadio2" checked>
+                        <label for="customRadio4" class="custom-control-label"></label>
+                    </div>
+                </div>
+                <div class="col-2"><img [src]="'assets/img/person-avatar.png'"
+                        class="img-thumbnail rounded mx-auto d-block" alt="..."
+                        style="max-height: 50px ; max-width: 50px ;">
+                </div>
+                <div class="col-6">
+                    <div class="row">Randria</div>
+                    <div class="row text-muted">555-555-555</div>
+                </div>
+                <div class="col-2">$ 74</div>
+            </div>
+            <hr>
+            <div class="row mb-3 justify-content-start align-items-center">
+                <div class="col-1">
+                    <div class="custom-control custom-radio">
+                        <input class="custom-control-input custom-control-input-danger" type="radio" id="customRadio5"
+                            name="customRadio2">
+                        <label for="customRadio5" class="custom-control-label"></label>
+                    </div>
+                </div>
+                <div class="col-2"><img [src]="'assets/img/person-avatar.png'"
+                        class="img-thumbnail rounded mx-auto d-block" alt="..."
+                        style="max-height: 50px ; max-width: 50px ;">
+                </div>
+                <div class="col-6">
+                    <div class="row">Rakoto</div>
+                    <div class="row text-muted">123-456-789</div>
+                </div>
+                <div class="col-2">$ 74 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+        Cancel
+    </button>
+    <button type="button" class="btn btn-info">Assign</button>
+</div>

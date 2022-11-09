@@ -2,9 +2,10 @@ export class Menu{
     "menuId": string;
     "name": string;
     "description": string;
-    "price": string;
+    "price": number;
     "available": boolean;
-    "quantity": string;
+    "quantity": number;
     "categoryId"?: string;
     "picture"?: string;
+    "file"?: File
 }

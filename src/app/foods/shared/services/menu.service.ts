@@ -24,7 +24,16 @@ export class MenuService {
   }
 
   public addMenu(menu: Menu): Observable<Menu> {
-    return this.http.post<Menu>(this.apiBaseUrl + "/manager/v1/menus/add", menu);
+    const formData = new FormData();
+    formData.append('name', menu.name);
+    formData.append('description', menu.description);
+    formData.append('price',menu.price as any);
+    formData.append('quantity', menu.quantity as any);
+    formData.append('available', menu.available as any);
+    if(menu.file){
+      formData.append('file', menu.file as File);
+    }  
+    return this.http.post<Menu>(this.apiBaseUrl + "/manager/v1/menus/add", formData);
   }
 
 }

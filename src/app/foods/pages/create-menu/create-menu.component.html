@@ -2,7 +2,7 @@
 <div class="row">
     <section class="col-lg-7 connectedSortable">
         <div class="card">
-            <form [formGroup]="menuForm" action="#" (ngSubmit)="onSubmitForm()">
+            <form [formGroup]="menuForm" action="#" enctype="multipart/form-data" (ngSubmit)="onSubmitForm()">
                 <div class="card-header ">
                     <div class="d-flex justify-content-between">
                         <h5>
@@ -43,13 +43,8 @@
                     </div>
                     <div class="form-group">
                         <label for="picture">Url image</label>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="http://exemple.com/monImage.jpg"
-                                formControlName="picture" required aria-label="Recipient's username"
-                                aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <a class=" btn btn-secondary">Aperçu</a>
-                            </div>
+                        <div class="form-group">
+                            <input class="picture" name="file" type="file" accept="image/png, image/gif, image/jpeg" (change)="selectImage($event)" formControlName="file">
                         </div>
                     </div>
                 </div>
@@ -69,15 +64,15 @@
             <div class="card-body">
                 <form>
                     <div class="col-lg-12 col-md-6">
-                        <img src="https://www.umamiburgerparis.com/media/images/gallery/CaaheCali_5.jpg?c=7777-1"
-                            class="img-thumbnail rounded">
+                        <div class="col-lg-12 col-md-6 d-flex justify-content-center">
+                            <img src="assets/img/default-image.png" class="img-thumbnail rounded" id="picture" formControlName="picture" style="width: 200px; height:200px">
+                        </div>
                     </div>
                     <div class="row pt-5">
                         <div class="col">
                             <label for="name">Disponibilité</label>
                         </div>
                         <div class="col">
-                            <!-- Default switch -->
                             <div class="custom-control custom-switch">
                                 <input type="checkbox" class="custom-control-input" id="available" formControlName="available" (change)="onCheckBoxAvailableChange($event)" checked>
                                 <label class="custom-control-label" for="available"></label>
@@ -90,7 +85,6 @@
                             <label for="name">Publié</label>
                         </div>
                         <div class="col">
-                            <!-- Default switch -->
                             <div class="custom-control custom-switch">
                                 <input type="checkbox" class="custom-control-input" id="publie" checked>
                                 <label class="custom-control-label" for="publie"></label>

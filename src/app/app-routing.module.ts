@@ -23,7 +23,12 @@ const routes: Routes = [
           import('./foods/food.module').then(m => m.FoodModule)
       },
       {
-        path: 'orders',
+        path: 'deliverers', canActivate: [AuthGuard],
+        loadChildren: () =>
+          import('./deliveries/delivery.module').then(m => m.DeliveryModule)
+      },
+      {
+        path: 'orders', canActivate: [AuthGuard],
         loadChildren: () =>
           import('./orders/order.module').then(m => m.OrderModule)
       },

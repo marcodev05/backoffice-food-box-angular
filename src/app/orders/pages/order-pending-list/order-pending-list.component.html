@@ -71,7 +71,7 @@
                     <div class="col border-left">
                         <div class="row px-2 justify-content-end">
                             <a (click)="declineOrder(order.orderId)" class="btn btn-warning">Decline</a>
-                            <a  (click)="confirmOrder(order.orderId)" class="btn ml-1 btn-primary">Confirm</a>
+                            <a (click)="confirmOrder(order.orderId)" class="btn ml-1 btn-primary">Confirm</a>
                         </div>
                         <hr>
                         <h6 class="text-center">{{order.contact.firstname}} {{order.contact.lastname}} </h6>
@@ -86,13 +86,15 @@
                             class="row mb-3 justify-content-start align-items-center">
                             <div class="col-3"><img
                                     [src]=" item.menu.picture ? item.menu.picture : 'assets/img/default-image.png'"
-                                    class="img-thumbnail rounded mx-auto d-block" alt="..." style="max-height: 50px ; max-width: 50px ;">
+                                    class="img-thumbnail rounded mx-auto d-block" alt="..."
+                                    style="max-height: 50px ; max-width: 50px ;">
                             </div>
                             <div class="col-6">
                                 {{item.menu.name}}
                             </div>
                             <div class="col-2">$ {{item.menu.price}} <span class="text-info"> x </span>
-                                <b>{{item.quantity}}</b></div>
+                                <b>{{item.quantity}}</b>
+                            </div>
                         </div>
                     </div>
                 </div>

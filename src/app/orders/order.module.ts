@@ -8,6 +8,7 @@ import { OrderDetailsComponent } from './pages/order-details/order-details.compo
 import { OrderPendingListComponent } from './pages/order-pending-list/order-pending-list.component';
 import { OrderActiveListComponent } from './pages/order-active-list/order-active-list.component';
 import { OrdersShippingComponent } from './pages/orders-shipping/orders-shipping.component';
+import { ModalDelivererComponent } from './shared/components/modal-deliverer/modal-deliverer.component';
 const orderRoutes: Routes = [
   { path: '', component: OrderPendingListComponent},
   { path: 'pending', component: OrderPendingListComponent},
@@ -22,7 +23,8 @@ const orderRoutes: Routes = [
     OrderDetailsComponent,
     OrderPendingListComponent,
     OrderActiveListComponent,
-    OrdersShippingComponent
+    OrdersShippingComponent,
+    ModalDelivererComponent
   ],
   imports: [
     CommonModule,

@@ -12,13 +12,15 @@ import { MenuService } from '../../shared/services/menu.service';
 export class CreateMenuComponent implements OnInit {
   title: string = "PLAT";
   successMsg = "";
-  swichAvailable:boolean = true;
+  swichAvailable: boolean = true;
+  urlImage = "";
+  file: any;
   public menuForm: FormGroup = new FormGroup({});
   constructor(
     private formBuilder: FormBuilder,
     private menuService: MenuService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -33,17 +35,18 @@ export class CreateMenuComponent implements OnInit {
       price: ["", Validators.required],
       picture: [""],
       categoryId: [""],
+      file: [""]
     });
   }
 
-  onCheckBoxAvailableChange(event: any):void{
-    if(event.target.checked){
+  onCheckBoxAvailableChange(event: any): void {
+    if (event.target.checked) {
       this.swichAvailable = true;
     }
     else this.swichAvailable = false;
   }
 
-  onSubmitForm():void {
+  onSubmitForm(): void {
     const formValue = this.menuForm.value;
     const menu = new Menu();
     menu.name = formValue['name'];
@@ -53,13 +56,22 @@ export class CreateMenuComponent implements OnInit {
     menu.available = this.swichAvailable;
     menu.picture = formValue['picture'];
     menu.categoryId = formValue['categoryId'];
-    this.menuService.addMenu(menu).subscribe(
-      data => {
+    menu.file = this.file;
+    console.log(menu);
+    this.menuService.addMenu(menu).subscribe({
+      next: (event: any) => {
         this.successMsg = "Ajouter avec succes!";
       },
-      error => {
+      error: (event: any) => {
         console.log(" Echec d'opération");
       }
-    )
+    })
+  }
+
+  selectImage(event: any): void {
+    this.file = event.target.files[0];
+    const url = URL.createObjectURL(this.file);
+    this.urlImage = url;
+    $('#picture').attr('src', url);
   }
 }

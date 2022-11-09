@@ -1,5 +1,10 @@
     <app-header [title]="title"></app-header>
     <div class="row">
-        <app-card-item-menu class="col-lg-3 col-md-4 mb-3" [description]="description"></app-card-item-menu>
-        <app-card-item-menu class="col-lg-3 col-md-4 mb-3" [description]="description"></app-card-item-menu>
+        <app-card-item-menu *ngFor="let menu of menus" class="col-lg-3 col-md-4 mb-3" 
+        [name]="menu.name"
+        [description]="menu.description"
+        [price] = "menu.price"
+        [quantity]="menu.quantity"
+        [picture]="menu?.picture ? menu.picture : 'assets/img/default-image.png'"
+        ></app-card-item-menu>
     </div>
