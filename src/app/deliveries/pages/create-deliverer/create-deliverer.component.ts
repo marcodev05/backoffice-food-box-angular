@@ -35,6 +35,7 @@ export class CreateDelivererComponent implements OnInit {
       address1: ["", Validators.required],
       address2: ["", Validators.required],
       city: ["", Validators.required],
+      phone: [""],
       available: [true],
       file: [""]
     });
@@ -50,6 +51,7 @@ export class CreateDelivererComponent implements OnInit {
     deliverer.address2 = formValue['address2'];
     deliverer.available = this.swichAvailable;
     deliverer.city = formValue['city'];
+    deliverer.phone = formValue['phone'];
     deliverer.file = this.file;
     this.deliveryService.createDeliverer(deliverer).subscribe(
       data => {

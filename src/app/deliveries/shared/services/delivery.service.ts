@@ -20,13 +20,12 @@ export class DeliveryService {
     formData.append('firstname', deliverer.firstname);
     formData.append('lastname', deliverer.lastname);
     formData.append('email',deliverer.email);
-    formData.append('address1', deliverer?.address1);
+    formData.append('address1', deliverer.address1);
     formData.append('address2', deliverer?.address2);
     formData.append('available', deliverer.available as any);
     formData.append('city', deliverer.city);
-    if(deliverer.file){
-      formData.append('file', deliverer.file as File);
-    } 
+    deliverer?.phone ? formData.append('phone', deliverer.phone): '';
+    deliverer?.file ? formData.append('file', deliverer.file as File) : '';
     return this.http.post<any>(appConst.MANAGER_URL + "/deliverers/add", formData);
   }
 

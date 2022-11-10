@@ -39,4 +39,8 @@ export class OrderService {
     return this.http.get<any[]>(appConst.MANAGER_URL + "/orders/status/in_process");
   }
 
+  public assignAnOrderToShipper(id: number, shipper_id: number): Observable<any> {
+    return this.http.get<any>(appConst.MANAGER_URL + "/orders/" + id + "/assign/" + shipper_id);
+  }
+
 }

@@ -50,7 +50,6 @@ export class OrderPendingListComponent implements OnInit {
   public declineOrder(id: number):void{
     this.orderService.declineOrder(id).subscribe(
       (response: any) => {
-          //console.log(response);
           this.fethAllPendingOrders();
       },
       (error: HttpErrorResponse) => {
