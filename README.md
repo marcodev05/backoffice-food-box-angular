@@ -29,7 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Screenshots Food box
 
 Menu
-![alt text](https://github.com/marcodev05/backoffice-food-box-angular/blob/master/screenshots/login.PNG)
+![alt text](https://github.com/marcodev05/backoffice-food-box-angular/blob/master/screenshots/login.png)
 
 Menu
 ![alt text](https://github.com/marcodev05/backoffice-food-box-angular/blob/master/screenshots/create%20menu.PNG)
