@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.authService.login(loginRequest).subscribe(
         data => {
-          this.router.navigate(['/'], );
+          this.router.navigate(['/menus/grid'], );
         },
         error => {
           this.errorMsg = "Invalid email ou password!";

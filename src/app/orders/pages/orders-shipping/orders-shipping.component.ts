@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orders-shipping.component.css']
 })
 export class OrdersShippingComponent implements OnInit {
-
+  title= "IN SHIPPING ORDERS"
   constructor() { }
 
   ngOnInit(): void {

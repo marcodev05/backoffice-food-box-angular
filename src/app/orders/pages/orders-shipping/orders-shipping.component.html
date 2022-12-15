@@ -1,1 +1,58 @@
-<p>orders-shipping works!</p>
+<app-header [title]="title"></app-header>
+<!-- Horizontal Steppers -->
+<div class="row mb-4 ">
+    <div class="col-md-12">
+        <!-- Stepers Wrapper -->
+        <div class="row pl-4 justify-content-left">
+            <!-- Second Step -->
+            <div class=" step-item active mb-2">
+                <a [routerLink]="['/orders']">
+                    <span class="rounded-circle bg-danger py-2 px-3">1</span>
+                    <span class="label mx-2 aling-item-center">Pending</span>
+                </a>
+            </div>
+            <div>
+                <hr class="mx-2" style='display:inline-block; width: 80px;'>
+            </div>
+            <!-- Second Step -->
+            <div class="step-item mb-2">
+                <a [routerLink]="['/orders/in_process']">
+                    <span class="rounded-circle bg-danger py-2 px-3">2</span>
+                    <span class="label mx-2">In process</span>
+                </a>
+            </div>
+            <div>
+                <hr class="mx-2 py-2 " style='display:inline-block; width:80px;'>
+            </div>
+            <!-- Third Step https://www.umamiburgerparis.com/media/images/gallery/CaaheCali_5.jpg?c=7777-1 -->
+            <div class="step-item warning mb-2">
+                <a [routerLink]="['/orders/shipping']">
+                    <span class="rounded-circle bg-danger py-2 px-3">3</span>
+                    <span class="label mx-2 text-danger text-bold" >In the Way</span>
+                </a>
+            </div>
+            <div>
+                <hr class="mx-2" style='display:inline-block; width:80px;'>
+            </div>
+            <!-- Forth Step -->
+            <div class="step-item warning">
+                <a [routerLink]="['/orders/shipping']">
+                    <span class="rounded-circle bg-danger py-2 px-3">4</span>
+                    <span class="label mx-2">Delivered</span>
+                </a>
+            </div>
+        </div>
+        <!-- /.Stepers Wrapper -->
+    </div>
+</div>
+<!-- /.Horizontal Steppers -->
+<hr class="shadow-lg  rounded p-1">
+
+<div>
+    <div  class="row justify-content-center my-5">
+        <h3>Empty List!</h3>
+    </div>
+    <div  class="row justify-content-center my-5">
+        <img class="col-6" src="assets/img/empty-box-removebg-preview.png" alt="" srcset="" style="max-height: 400px;">    
+    </div>
+</div>

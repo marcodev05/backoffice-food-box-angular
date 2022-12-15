@@ -6,9 +6,9 @@
         <div class="row pl-4 justify-content-left">
             <!-- Second Step -->
             <div class=" step-item active mb-2">
-                <a [routerLink]="['/orders']">
+                <a [routerLink]="['/orders/pending']">
                     <span class="rounded-circle bg-danger py-2 px-3">1</span>
-                    <span class="label mx-2 aling-item-center">Pending</span>
+                    <span class="label mx-2">Pending</span>
                 </a>
             </div>
             <div>
@@ -49,7 +49,7 @@
 
 <hr class="shadow-lg  rounded p-1">
 <div class="row">
-    <div *ngFor="let order of orders " class="col-lg-6" data-aos="zoom-in" data-aos-duration="1500">
+    <div *ngFor="let order of orders " class="col-lg-6" data-aos="zoom-in" data-aos-duration="1000">
         <div class="card shadow">
             <div class="card-body">
                 <div class="row">
@@ -101,5 +101,13 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div *ngIf="orders.length == 0">
+    <div  class="row justify-content-center my-5">
+        <h3>Empty List!</h3>
+    </div>
+    <div  class="row justify-content-center my-5">
+        <img class="col-6" src="assets/img/empty-box-removebg-preview.png" alt="" srcset="" style="max-height: 400px;">    
     </div>
 </div>

@@ -7,6 +7,7 @@ import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { CardItemMenuComponent } from './components/card-item-menu/card-item-menu.component';
 import { DataTablesModule } from 'angular-datatables';
 import { MultiStepsComponent } from './components/multi-steps/multi-steps.component';
+import { RouterLink, RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MultiStepsComponent } from './components/multi-steps/multi-steps.compon
   imports: [
     CommonModule,
     DataTablesModule,
+    RouterModule
   ],
   exports:[
     HeaderComponent,
@@ -28,7 +30,7 @@ import { MultiStepsComponent } from './components/multi-steps/multi-steps.compon
     FooterComponent,
     SidebarComponent,
     CardItemMenuComponent,
-    DataTablesModule
+    DataTablesModule,
   ]
 })
 export class SharedModule { }

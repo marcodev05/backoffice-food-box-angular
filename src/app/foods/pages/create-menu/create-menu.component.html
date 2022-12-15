@@ -7,20 +7,19 @@
                     <div class="d-flex justify-content-between">
                         <h5>
                             <i class="ion ion-clipboard mr-1"></i>
-                            Nouveau plat
+                            New menu
                         </h5>
-                        <button type="submit" class="btn btn-sm btn-primary float-right"><i class="fas fa-plus"></i> Nouveau
-                            categorie</button>
+                        <button type="submit" class="btn btn-sm btn-info float-right"><i class="fas fa-plus"></i> New category</button>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="name">Nom du produit <span class="text-danger"> * </span></label>
+                            <label for="name">Product name <span class="text-danger"> * </span></label>
                             <input type="text" class="form-control" id="name" formControlName="name" required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="quantity">Quantité <span class="text-danger"> * </span></label>
+                            <label for="quantity">Quantity <span class="text-danger"> * </span></label>
                             <input type="number" class="form-control" id="quantity" formControlName="quantity" required
                                 placeholder="0">
                         </div>
@@ -32,25 +31,31 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="price">Prix <span class="text-danger"> * </span></label>
+                            <label for="price">Price <span class="text-danger"> * </span></label>
                             <input type="number" class="form-control" id="price" formControlName="price" required
                                 placeholder="$ 10">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="category">Categorie</label>
-                            <input type="text" class="form-control" id="name" formControlName="category" required>
+                            <label for="category">Category</label>
+                            <select class="custom-select" id="category" formControlName="category" required>
+                                <option>Burger</option>
+                                <option>Pizza</option>
+                                <option>Boisson</option>
+                            </select>
+                            <!-- <input type="text" class="form-control" id="name" formControlName="category" required> -->
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="picture">Url image</label>
+                        <label for="picture">Image</label>
                         <div class="form-group">
-                            <input class="picture" name="file" type="file" accept="image/png, image/gif, image/jpeg" (change)="selectImage($event)" formControlName="file">
+                            <input class="picture" name="file" id="inputFile" type="file" accept="image/png, image/gif, image/jpeg" (change)="selectImage($event)" formControlName="file">
+                            
                         </div>
                     </div>
                 </div>
                 <div class="card-footer clearfix">
-                    <button type="submit" class="btn btn-success float-right"><i class="fas fa-save"></i>
-                        Enregistrer</button>
+                    <button type="submit" class="btn btn-info float-right"><i class="fas fa-save"></i>
+                        Save</button>
                 </div>
             </form>
         </div>
@@ -70,7 +75,7 @@
                     </div>
                     <div class="row pt-5">
                         <div class="col">
-                            <label for="name">Disponibilité</label>
+                            <label for="name">Available</label>
                         </div>
                         <div class="col">
                             <div class="custom-control custom-switch">
@@ -82,7 +87,7 @@
                     <hr>
                     <div class="row">
                         <div class="col">
-                            <label for="name">Publié</label>
+                            <label for="name">Public</label>
                         </div>
                         <div class="col">
                             <div class="custom-control custom-switch">
@@ -141,4 +146,7 @@
 </div>
 <div *ngIf="successMsg !== ''" class="alert alert-success text-light" role="alert">
     {{successMsg}}
+</div>
+<div *ngIf="errorMsg !== ''" class="alert alert-danger text-light" role="alert">
+    {{errorMsg}}
 </div>

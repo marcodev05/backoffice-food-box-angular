@@ -10,8 +10,9 @@ import { MenuService } from '../../shared/services/menu.service';
   styleUrls: ['./create-menu.component.css']
 })
 export class CreateMenuComponent implements OnInit {
-  title: string = "PLAT";
+  title = "FOODS";
   successMsg = "";
+  errorMsg = "";
   swichAvailable: boolean = true;
   urlImage = "";
   file: any;
@@ -60,10 +61,13 @@ export class CreateMenuComponent implements OnInit {
     console.log(menu);
     this.menuService.addMenu(menu).subscribe({
       next: (event: any) => {
-        this.successMsg = "Ajouter avec succes!";
+        this.successMsg = "Added with success!";
+        this.errorMsg = "";
       },
       error: (event: any) => {
         console.log(" Echec d'opération");
+        this.errorMsg = "Error occured, check your input";
+        this.successMsg = "";
       }
     })
   }
